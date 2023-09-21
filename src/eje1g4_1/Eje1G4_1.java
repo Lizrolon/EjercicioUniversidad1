@@ -2,6 +2,7 @@
 package eje1g4_1;
 
 import eje1g4_1.AccesoADatos.AlumnoData;
+import eje1g4_1.AccesoADatos.Conexion;
 import eje1g4_1.AccesoADatos.InscripcionData;
 import eje1g4_1.AccesoADatos.MateriaData;
 import eje1g4_1.Entidades.Alumno;
@@ -23,6 +24,8 @@ public class Eje1G4_1 {
 
    
     public static void main(String[] args)  {
+Connection con= Conexion.getConexion();
+
         /*
        String url= "jdbc:mariadb://localhost:3306/universidadulp1";
        String usuario = "root";
@@ -118,25 +121,25 @@ public class Eje1G4_1 {
         
     }
 
-    */
-Alumno juan = new Alumno(4,43593047,"Luna","Juan",LocalDate.of(1990,03,23),true);
-AlumnoData alu= new  AlumnoData();
-InscripcionData ins = new InscripcionData();
-MateriaData matD = new MateriaData();
-//alu.guardarAlumno(juan);
- //alu.eliminarAlumno(9);
- Materia mat = new Materia("Matematicas I",1,true);
- 
+//    */
+//Alumno juan = new Alumno(4,43593047,"Luna","Juan",LocalDate.of(1990,03,23),true);
+//AlumnoData alu= new  AlumnoData();
+//InscripcionData ins = new InscripcionData();
+//MateriaData matD = new MateriaData();
+////alu.guardarAlumno(juan);
+// //alu.eliminarAlumno(9);
+// Materia mat = new Materia("Matematicas I",1,true);
+// 
  //matD.eliminarMateria(5);
  
  //matD.guardarMateria(mat);
  //Materia td = matD.buscarMateria(4);
         //System.out.println(td);
 
- Alumno juan1 = alu.buscarAlumno(13);
- Materia mate = matD.buscarMateria(1);
+// Alumno juan1 = alu.buscarAlumno(13);
+// Materia mate = matD.buscarMateria(1);
  
- Inscripcion in = new Inscripcion(6,juan1,mate);
+// Inscripcion in = new Inscripcion(6,juan1,mate);
  
  //ins.actualizarNota(11, 4, 9);
  //ins.guardarInscripcion(in);
