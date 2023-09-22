@@ -60,6 +60,11 @@ DefaultTableModel modelo = new DefaultTableModel();
         jBguardar.setText("Guardar");
 
         jBsalir.setText("Salir");
+        jBsalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBsalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,6 +109,10 @@ DefaultTableModel modelo = new DefaultTableModel();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBsalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBsalirMouseClicked
+       this.dispose();
+    }//GEN-LAST:event_jBsalirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

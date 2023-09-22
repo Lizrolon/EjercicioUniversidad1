@@ -5,16 +5,25 @@
  */
 package eje1g4_1.Vistas;
 
+import eje1g4_1.AccesoADatos.Conexion;
+import eje1g4_1.AccesoADatos.MateriaData;
+import eje1g4_1.Entidades.Materia;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Michi
  */
-public class Materia extends javax.swing.JInternalFrame {
+public class GestionDeMateria extends javax.swing.JInternalFrame {
+Materia mat = new Materia();
+MateriaData matD = new MateriaData();
 
     /**
      * Creates new form Materia
      */
-    public Materia() {
+    public GestionDeMateria() {
+      Connection  con = Conexion.getConexion();
         initComponents();
     }
 
@@ -62,14 +71,49 @@ public class Materia extends javax.swing.JInternalFrame {
 
         jBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBuscar.setText("Buscar");
+        jBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscarActionPerformed(evt);
+            }
+        });
 
         jBnuevoM.setText("Nuevo");
+        jBnuevoM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnuevoMActionPerformed(evt);
+            }
+        });
 
         jbGuardarM.setText("Guardar");
+        jbGuardarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarMActionPerformed(evt);
+            }
+        });
 
         jBeliminarM.setText("Eliminar");
+        jBeliminarM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBeliminarMMouseClicked(evt);
+            }
+        });
+        jBeliminarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarMActionPerformed(evt);
+            }
+        });
 
         jBsalirM.setText("Salir");
+        jBsalirM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBsalirMMouseClicked(evt);
+            }
+        });
+        jBsalirM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,6 +185,70 @@ public class Materia extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBsalirMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirMActionPerformed
+       
+    }//GEN-LAST:event_jBsalirMActionPerformed
+
+    private void jBsalirMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBsalirMMouseClicked
+         this.dispose();
+    }//GEN-LAST:event_jBsalirMMouseClicked
+
+    private void jBeliminarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBeliminarMMouseClicked
+       
+    }//GEN-LAST:event_jBeliminarMMouseClicked
+
+    private void jBeliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMActionPerformed
+        
+        matD.eliminarMateria(Integer.parseInt(jTcodigo.getText()));
+        jRestado.setText("");
+        jTaño.setText("");
+        jTcodigo.setText("");
+        jTnombre.setText("");
+    }//GEN-LAST:event_jBeliminarMActionPerformed
+
+    private void jbGuardarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarMActionPerformed
+       
+       
+       int anio= Integer.parseInt(jTaño.getText());
+       String nombre= jTnombre.getText();
+       mat.getIdMateria();
+       mat.setAnioMateria(anio);
+       mat.setNombre(nombre); 
+       matD.guardarMateria(mat);
+       matD.modificarMateria(mat);
+        
+    }//GEN-LAST:event_jbGuardarMActionPerformed
+
+    private void jBnuevoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoMActionPerformed
+         int anio= Integer.parseInt(jTaño.getText());
+       String nombre= jTnombre.getText();
+       
+       mat.getIdMateria();
+       mat.setAnioMateria(anio);
+       mat.setNombre(nombre); 
+       matD.guardarMateria(mat);
+       
+        jRestado.setText("");
+        jTaño.setText("");
+        jTcodigo.setText("");
+        jTnombre.setText("");  
+    }//GEN-LAST:event_jBnuevoMActionPerformed
+
+    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarActionPerformed
+        int codigo = Integer.parseInt(jTcodigo.getText());
+       Materia mate= matD.buscarMateria(codigo);
+        if(mate==null){
+        
+            JOptionPane.showMessageDialog(this,"La materia con el código ingresado no se encuentra disponible intentelo nuevamente");
+
+        }else{
+        jTaño.setText(Integer.toString(mate.getAnioMateria()));
+        jTnombre.setText(mate.getNombre());
+        jRestado.setEnabled(mat.isActivo());
+        
+        }
+    }//GEN-LAST:event_jBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

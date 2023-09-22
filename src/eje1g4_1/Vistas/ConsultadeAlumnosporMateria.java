@@ -5,6 +5,8 @@
  */
 package eje1g4_1.Vistas;
 
+import eje1g4_1.AccesoADatos.MateriaData;
+import eje1g4_1.Entidades.Materia;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -13,6 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultadeAlumnosporMateria extends javax.swing.JInternalFrame {
 DefaultTableModel modelo = new DefaultTableModel();
+Materia mat = new Materia();
+MateriaData matD = new MateriaData();
     /**
      * Creates new form ConsultadeAlumnosporMateria
      */
@@ -44,6 +48,11 @@ DefaultTableModel modelo = new DefaultTableModel();
         jLabel2.setText("Seleccione una Materia:");
 
         jListaMaterias.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jListaMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListaMateriasActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -59,6 +68,16 @@ DefaultTableModel modelo = new DefaultTableModel();
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Salir");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +118,18 @@ DefaultTableModel modelo = new DefaultTableModel();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jListaMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListaMateriasActionPerformed
+       
+    }//GEN-LAST:event_jListaMateriasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

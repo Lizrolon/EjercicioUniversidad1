@@ -1,6 +1,7 @@
 
 package eje1g4_1.Vistas;
 
+<<<<<<< Updated upstream
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import eje1g4_1.AccesoADatos.AlumnoData;
@@ -20,15 +21,30 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+=======
+import eje1g4_1.AccesoADatos.AlumnoData;
+import eje1g4_1.Entidades.Alumno;
+import java.sql.Date;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+>>>>>>> Stashed changes
 
 /**
  *
  * @author Michi
  */
 public class GestiondeAlumnos extends javax.swing.JInternalFrame {
+<<<<<<< Updated upstream
   
     
 
+=======
+Alumno alu = new Alumno();
+AlumnoData aluD = new AlumnoData();
+    /**
+     * Creates new form Alumno
+     */
+>>>>>>> Stashed changes
     public GestiondeAlumnos() {
         initComponents();
         
@@ -45,17 +61,25 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtDoc = new javax.swing.JTextField();
+<<<<<<< Updated upstream
         jbuscar = new javax.swing.JButton();
+=======
+        jbBuscar = new javax.swing.JButton();
+>>>>>>> Stashed changes
         jLabel3 = new javax.swing.JLabel();
         jtAp = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jtnom = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+<<<<<<< Updated upstream
+=======
+        jFechaNacimiento = new com.toedter.calendar.JDateChooser();
+>>>>>>> Stashed changes
         jbNuevo = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jbGuardar = new javax.swing.JButton();
-        jBsalirA = new javax.swing.JButton();
+        jBSalir = new javax.swing.JButton();
         jrEst = new javax.swing.JRadioButton();
         jDate = new com.toedter.calendar.JDateChooser();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -92,6 +116,7 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Documento:");
 
+<<<<<<< Updated upstream
         jbuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbuscar.setText("Buscar");
         jbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,6 +127,13 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
         jbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbuscarActionPerformed(evt);
+=======
+        jbBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+>>>>>>> Stashed changes
             }
         });
 
@@ -134,6 +166,7 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
             }
         });
 
+<<<<<<< Updated upstream
         jBsalirA.setText("Salir");
         jBsalirA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +181,19 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
+=======
+        jBSalir.setText("Salir");
+        jBSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBSalirMouseClicked(evt);
+            }
+        });
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,18 +227,24 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbGuardar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jBsalirA))
+                                .addComponent(jBSalir))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jtDoc)
                                     .addComponent(jtAp)
                                     .addComponent(jtnom, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                                 .addGap(38, 38, 38)
+<<<<<<< Updated upstream
                                 .addComponent(jbuscar))
                             .addComponent(jrEst)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+=======
+                                .addComponent(jbBuscar))
+                            .addComponent(jFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jrEst))))
+>>>>>>> Stashed changes
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -204,7 +256,11 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< Updated upstream
                     .addComponent(jbuscar))
+=======
+                    .addComponent(jbBuscar))
+>>>>>>> Stashed changes
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -214,10 +270,21 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
                     .addComponent(jtnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
+<<<<<<< Updated upstream
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jrEst))
                 .addGap(18, 18, 18)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jrEst))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel6))
+                    .addComponent(jFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> Stashed changes
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -231,12 +298,21 @@ public class GestiondeAlumnos extends javax.swing.JInternalFrame {
                             .addComponent(jbEliminar)
                             .addComponent(jbGuardar)
                             .addComponent(jbNuevo))
+<<<<<<< Updated upstream
                         .addGap(0, 129, Short.MAX_VALUE))))
+=======
+                        .addGap(0, 41, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBSalir)
+                        .addGap(27, 27, 27))))
+>>>>>>> Stashed changes
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
        Connection con=null;
        String  sql="INSERT INTO alumno (dni,apellido,nombre,fechaNacimiento,estado)"
@@ -333,12 +409,62 @@ public void limpiar(){
     private com.toedter.calendar.JDateChooser jDate;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JInternalFrame jInternalFrame1;
+=======
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+        
+    }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void jBSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBSalirMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jBSalirMouseClicked
+
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+        
+    }//GEN-LAST:event_jbNuevoActionPerformed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        int docu = Integer.parseInt(jtDoc.getText());
+        Alumno alum = aluD.buscarAlumno(docu);
+        if(alum==null){
+        
+        JOptionPane.showMessageDialog(this,"El documento ingresado no se encuentra en la base de datos");
+        
+        
+        }else{
+        jrEst.setEnabled(alum.isActivo());
+        jtAp.setText(alum.getApellido());
+        jtnom.setText(alum.getNombre());
+        jFechaNacimiento.setDate(Date.valueOf(alum.getFechaNac()));
+        }
+  
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        int docu = Integer.parseInt(jtDoc.getText());
+        String ape = jtAp.getText();
+        String nom = jtnom.getText();  
+        String fechaN = jFechaNacimiento.getDateFormatString();
+        boolean act =  jrEst.isSelected();
+        alu.setDni(docu);
+        alu.setNombre(nom);
+        alu.setFechaNac(LocalDate.parse(fechaN));
+        alu.setApellido(ape);
+        alu.setActivo(act);
+        aluD.guardarAlumno(alu);
+    }//GEN-LAST:event_jbGuardarActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBSalir;
+    private com.toedter.calendar.JDateChooser jFechaNacimiento;
+>>>>>>> Stashed changes
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+<<<<<<< Updated upstream
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -347,6 +473,12 @@ public void limpiar(){
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbNuevo;
     private javax.swing.JButton jbuscar;
+=======
+    private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbEliminar;
+    private javax.swing.JButton jbGuardar;
+    private javax.swing.JButton jbNuevo;
+>>>>>>> Stashed changes
     private javax.swing.JRadioButton jrEst;
     private javax.swing.JTextField jtAp;
     private javax.swing.JTextField jtDoc;
